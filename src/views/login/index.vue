@@ -90,6 +90,7 @@ export default {
         const { data } = await login(user)
         this.$toast.success('登录成功')
         this.$store.commit('setUser', data.data)
+        this.$router.push('/my')
       } catch (err) {
         if (err.response.status === 400) {
           console.log('手机号或者验证码不正确')
